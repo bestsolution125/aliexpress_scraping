@@ -384,6 +384,23 @@ for data in ALl_main_data:
     except:
         pass
 
+    for image_link in driver.find_elements_by_xpath('//*[@class="sku-wrap"]/div[2]/ul/li/div/img'):
+        try:
+            try:
+                image_link.click()
+            except:
+                pass
+            time.sleep(4)
+            imge = driver.find_element_by_xpath('//*[@class="magnifier-image"]').get_attribute("src")
+            price = driver.find_element_by_xpath('//*[@class="product-price-value"]').text
+            print(imge)
+
+            print(price)
+            f.write('\n')
+            f.write(str(data['product_url'])+','+str(data['title'])+','+str(price)+','+str(imge)+','+str(data['shipping_price'])+','+str(data['shipping_info']))
+        except:
+            pass
+
 
 f.close()
 driver.close()
