@@ -353,13 +353,7 @@ while i <= 14:
                     img_url = data.xpath('.//img[@class="item-img"]/@src')[0]
                 except:
                     img_url = ''
-                # try:
-                #     if img_url:
-                #         f_image = open('images/'+str(title).replace('/','-')+'.jpg', 'wb')
-                #         f_image.write(requests.get('https:'+str(img_url)).content)
-                #         f_image.close()
-                # except:
-                #     pass
+              
                 try:
                     shipping_price = data.xpath('.//span[@class="shipping-value"]/text()')[0]
                 except:
@@ -367,8 +361,7 @@ while i <= 14:
                 shipping_info = 'to Brazil via SF eParcel'
                 if product_url and title:
                     ALl_main_data.append({'product_url': str(product_url), 'title': str(title), 'price': str(price), 'img_url': str(img_url), 'shipping_price': str(shipping_price), 'shipping_info': str(shipping_info) })
-                    # f.write('\n')
-                    # f.write(str(product_url)+','+str(title)+','+str(price)+','+str(img_url)+','+str(shipping_price)+','+str(shipping_info))
+                   ite(str(product_url)+','+str(title)+','+str(price)+','+str(img_url)+','+str(shipping_price)+','+str(shipping_info))
             except Exception as e:
                 print(e)
 
@@ -378,7 +371,6 @@ while i <= 14:
 
 for data in ALl_main_data:
     driver.get('https:'+data['product_url'])
-    # driver.get('https://www.aliexpress.com/item/32381108010.html?spm=a2g0o.productlist.0.0.65d272af1A9dWv&algo_pvid=3273a230-e646-4ecd-b453-4eb605bfbfd6&algo_expid=3273a230-e646-4ecd-b453-4eb605bfbfd6-0&btsid=0ab6f82115867997551543438e20f0&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_')
     time.sleep(5)
     try:
         driver.find_element_by_xpath('//*[@class="next-dialog next-closeable ui-newuser-layer-dialog"]/a').click()
