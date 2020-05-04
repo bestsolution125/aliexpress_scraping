@@ -1,6 +1,8 @@
 import requests
 from lxml import html
 from selenium import webdriver
+import re
+import urllib
 import time
 
 f = open('aliexpress.csv','w')
