@@ -361,7 +361,7 @@ while i <= 14:
                 shipping_info = 'to Brazil via SF eParcel'
                 if product_url and title:
                     ALl_main_data.append({'product_url': str(product_url), 'title': str(title), 'price': str(price), 'img_url': str(img_url), 'shipping_price': str(shipping_price), 'shipping_info': str(shipping_info) })
-                   ite(str(product_url)+','+str(title)+','+str(price)+','+str(img_url)+','+str(shipping_price)+','+str(shipping_info))
+                    f.write(str(product_url)+','+str(title)+','+str(price)+','+str(img_url)+','+str(shipping_price)+','+str(shipping_info))
             except Exception as e:
                 print(e)
 
