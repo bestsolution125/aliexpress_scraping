@@ -5,6 +5,7 @@ import re
 import urllib
 import time
 
+
 f = open('aliexpress.csv','w')
 f.write('product_url,title,price,img_url,shipping_price,shipping_info')
 
