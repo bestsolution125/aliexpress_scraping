@@ -5,10 +5,8 @@ import re
 import urllib
 import time
 
-
 f = open('aliexpress.csv','w')
 f.write('product_url,title,price,img_url,shipping_price,shipping_info')
-
 Url = 'https://www.aliexpress.com/category/1420/tools.html?spm=a2g0o.home.113.3.650c2145ANssXM&site=glo&shipCountry=BR&isrefine=y&shipFromCountry=BR'
 try:
     driver.find_element_by_xpath('//*[@class="next-dialog next-closeable ui-newuser-layer-dialog"]/a').click()
